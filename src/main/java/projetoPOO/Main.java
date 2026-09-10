@@ -1,17 +1,19 @@
 package projetoPOO;
 
-//TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
-// click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 public class Main {
-    static void main() {
-        //TIP Press <shortcut actionId="ShowIntentionActions"/> with your caret at the highlighted text
-        // to see how IntelliJ IDEA suggests fixing it.
-        IO.println(String.format("Hello and welcome!"));
+    public static void main(String[] args) {
 
-        for (int i = 1; i <= 5; i++) {
-            //TIP Press <shortcut actionId="Debug"/> to start debugging your code. We have set one <icon src="AllIcons.Debugger.Db_set_breakpoint"/> breakpoint
-            // for you, but you can always add more by pressing <shortcut actionId="ToggleLineBreakpoint"/>.
-            IO.println("i = " + i);
-        }
+        Produto p1 = new Produto("Chaveiro", "Produto com 60% de lucro", 14);
+        Produto p2 = new Produto("Maquina de cabelo", "com 40% de lucro", 55.90);
+
+        Carrinho c = new Carrinho();
+        c.adicionar(p1);
+        c.adicionar(p2);
+
+        c.remover("Chaveiro");
+
+        Venda v = new Venda(c);
+        v.totalPreco();
+
     }
 }
